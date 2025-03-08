@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6366f1">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✓</text></svg>">
+    <title>Modern Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Task Manager</h1>
+            <p class="subtitle">Organize your tasks efficiently</p>
+        </header>
+
+        <div class="task-input-container">
+            <form id="task-form">
+                <div class="input-group">
+                    <input type="text" id="task-title" placeholder="Add a new task..." required>
+                    <textarea id="task-description" placeholder="Description (optional)"></textarea>
+                </div>
+                <button type="submit" id="add-task-btn">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </form>
+        </div>
+
+        <div class="tasks-container">
+            <div class="tasks-header">
+                <h2>My Tasks</h2>
+                <div class="filter-options">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+            </div>
+            
+            <div id="tasks-list">
+                <!-- Tasks will be added here dynamically -->
+            </div>
+            
+            <div class="tasks-summary">
+                <span id="tasks-count">0 tasks left</span>
+                <button id="clear-completed">Clear completed</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Task edit modal -->
+    <div class="modal" id="edit-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Edit Task</h2>
+            <form id="edit-form">
+                <input type="hidden" id="edit-task-id">
+                <div class="input-group">
+                    <input type="text" id="edit-task-title" placeholder="Task title" required>
+                    <textarea id="edit-task-description" placeholder="Description (optional)"></textarea>
+                </div>
+                <button type="submit" class="save-btn">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
