@@ -1,5 +1,5 @@
 [build]
-  base = "todo-app/"
+  base = "/"
   publish = "/"
   command = ""
 
